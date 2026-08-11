@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+
+  <id>io.github.frexlinsao_bit.MyBibleApp</id>
+
+  <name>My Bible App</name>
+  <summary>Offline Bible application</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <developer id="io.github.frexlinsao_bit">
+    <name>Frex L Insao</name>
+  </developer>
+
+  <description>
+    <p>
+      My Bible App is an offline Bible application for reading and browsing
+      the Bible without requiring an internet connection.
+    </p>
+    <p>
+      It provides easy navigation through the books, chapters, and verses.
+    </p>
+  </description>
+
+  <url type="homepage">https://github.com/frexlinsao-bit/MyBibleApp</url>
+
+  <launchable type="desktop-id">
+    io.github.frexlinsao_bit.MyBibleApp.desktop
+  </launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/frexlinsao-bit/MyBibleApp/raw/refs/heads/main/my-bible-app-screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-08-10">
+      <description>
+        <p>Initial release of My Bible App.</p>
+      </description>
+    </release>
+  </releases>
+
+</component>

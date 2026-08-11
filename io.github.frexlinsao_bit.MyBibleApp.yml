@@ -1,0 +1,44 @@
+app-id: io.github.frexlinsao_bit.MyBibleApp
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+command: my-bible-app
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=dri
+
+modules:
+  - name: my-bible-app
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/lib/my-bible-app
+      - cp -r . /app/lib/my-bible-app/
+
+      - mkdir -p /app/bin
+      - |
+        cat > /app/bin/my-bible-app <<'SCRIPT'
+        #!/bin/sh
+        export LD_LIBRARY_PATH=/app/lib/my-bible-app:$LD_LIBRARY_PATH
+        exec /app/lib/my-bible-app/my-bible-app --no-sandbox "$@"
+        SCRIPT
+      - chmod +x /app/bin/my-bible-app
+
+      - install -Dm644 my-bible-app.desktop /app/share/applications/io.github.frexlinsao_bit.MyBibleApp.desktop
+      - install -Dm644 icon-512-square.png /app/share/icons/hicolor/512x512/apps/io.github.frexlinsao_bit.MyBibleApp.png
+      - install -Dm644 io.github.frexlinsao_bit.MyBibleApp.metainfo.xml /app/share/metainfo/io.github.frexlinsao_bit.MyBibleApp.metainfo.xml
+
+    sources:
+      - type: dir
+        path: dist/linux-unpacked
+
+      - type: file
+        path: my-bible-app.desktop
+
+      - type: file
+        path: icons/icon-512-square.png
+
+      - type: file
+        path: io.github.frexlinsao_bit.MyBibleApp.metainfo.xml

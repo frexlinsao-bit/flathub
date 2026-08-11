@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=My Bible App
+Comment=Offline Bible Application
+Exec=my-bible-app
+Icon=io.github.frexlinsao_bit.MyBibleApp
+Terminal=false
+Type=Application
+Categories=Education;
+StartupWMClass=my-bible-app
